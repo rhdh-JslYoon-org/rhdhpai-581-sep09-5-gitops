@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: rhdhpai-581-sep09-5-model-server
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: rhdhpai-581-sep09-5-model-server
+  name: rhdhpai-581-sep09-5-model-server
+spec:
+  ports:
+    - port: 8001
+      protocol: TCP
+      targetPort: 8001
+  selector:
+    app.kubernetes.io/instance: rhdhpai-581-sep09-5-model-server

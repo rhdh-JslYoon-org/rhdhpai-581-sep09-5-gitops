@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rhdhpai-581-sep09-5-gitops
+  description: This is GitOps manifest for rhdhpai-581-sep09-5   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=rhdhpai-581-sep09-5
+    janus-idp.io/tekton: rhdhpai-581-sep09-5 
+    backstage.io/kubernetes-id: rhdhpai-581-sep09-5 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:rhdhpai-581-sep09-5  
